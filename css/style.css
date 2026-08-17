@@ -1,0 +1,941 @@
+/* ===================================
+   1. RÉINITIALISATION & BASE
+====================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fa;
+}
+
+/* ===================================
+   2. HEADER & NAVIGATION
+====================================== */
+header {
+    width: 100%;
+    background: #0057B8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo h2 {
+    color: white;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #ff8800;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #0057B8;
+    background: #ffffff;
+    padding: 10px 20px;
+    border-radius: 19px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-contact {
+    background: white;
+    color: #0057B8;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-contact:hover {
+    transform: scale(1.05);
+}
+
+/* Bouton Hamburger (caché sur ordinateur) */
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* ===================================
+   3. SECTION HERO
+====================================== */
+.hero {
+    width: 90%;
+    max-width: 1200px;
+    margin: 140px auto 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    color: #003B80;
+    margin-bottom: 25px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: #0057B8;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+}
+
+.btn-secondary {
+    border: 2px solid #0057B8;
+    color: #0057B8;
+    padding: 15px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #0057B8;
+    color: white;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    max-width: 520px; 
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================
+   4. CATEGORIES
+====================================== */
+.categories {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 38px;
+    color: #003B80;
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;             /* L'image s'adapte à la largeur */
+    max-width: 250px;        /* Taille max optimale pour mobile et PC */
+    height: 200px;           /* Hauteur fixe bien proportionnée */
+    object-fit: contain;     /* Affiche tout le produit sans le couper */
+    display: block;
+    border-radius: 8px;
+    margin: 20px auto 0;     /* Centrage parfait avec un espace en haut */
+}
+
+.card h3 {
+    color: #0057B8;
+    margin: 20px 0 10px;
+}
+
+.card p {
+    color: #555;
+    padding: 0 20px 25px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   5. SERVICES
+====================================== */
+.services-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef2f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 87, 184, 0.15);
+    border-color: #0057B8;
+}
+
+.service-box .icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: #eef5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-box:hover .icon {
+    transform: scale(1.1);
+    background-color: #0057B8;
+}
+
+.service-box .icon img {
+    width: 150%;
+    border-radius: 50%;
+    height: 150%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.service-box h3 {
+    color: #003B80;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.service-box p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   6. PRODUITS
+====================================== */
+.page-title {
+    margin-top: 130px;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-title h1 {
+    color: #003B80;
+    font-size: 45px;
+}
+
+.page-title p {
+    margin-top: 15px;
+    color: #666;
+}
+
+.recherche {
+    width: 90%;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.recherche input {
+    width: 100%;
+    padding: 19px;
+    border: 2px solid #0057B8;
+    border-radius: 50px;
+    font-size: 18px;
+    outline: none;
+}
+
+.produits-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+
+/* ===================================
+   STYLISATION DES CARACTÉRISTIQUES PRODUITS
+====================================== */
+.product-card {
+    min-height: 380px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+    text-align: center;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card h3 {
+    margin: 15px 10px 10px;
+    color: #003B80;
+    font-size: 20px;
+}
+
+/* Liste des caractéristiques */
+.caracteristiques {
+    list-style: none;
+    padding: 0 20px;
+    margin: 10px 0 0 0;
+    text-align: left;
+    width: 100%;
+}
+
+.caracteristiques li {
+    font-size: 14px;
+    color: #444;
+    padding: 6px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 18px;
+}
+
+.caracteristiques li:last-child {
+    border-bottom: none;
+}
+
+/* Icône ou coche avant chaque caractéristique */
+.caracteristiques li::before {
+    content: "•";
+    color: #0057B8;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+.caracteristiques li strong {
+    color: #003B80;
+}
+
+.color-magenta {
+    color: #FF00FF; /* Couleur magenta */
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.color-yellow {
+    color: #FFD700; /* Couleur jaune */
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.color-black {
+    color: #000000; /* Couleur noire */
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.color-cyan {
+    color: #00FFFF; /* Couleur cyan */
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+  max-width: 100%; /* S'adapte à la largeur du conteneur */
+  height: 100%; /* Maintient les proportions sans déformer */
+  object-fit: contain; /* Évite d'étirer l'image si elle est dans un conteneur fixe */
+
+    /* max-width: 220px;
+    height: 200px; */
+    /* object-fit: cover; <--- Remplacez 'contain' par 'cover' */
+    border-radius: 15px !important;
+    margin: 15px auto 0;
+    display: block;
+}
+
+.product-card h3 {
+    margin: 20px 10px 10px;
+    color: #003B80;
+}
+
+/* ===================================
+   8. FORMULAIRE DE CONTACT
+====================================== */
+.contact {
+    width: 90%;
+    max-width: 650px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact h2 {
+    text-align: center;
+    color: #003B80;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafbfc;
+}
+
+#contactForm textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #0057B8;
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(0, 87, 184, 0.2);
+}
+
+#contactForm button[type="submit"] {
+    background-color: #25D366;
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+#contactForm button[type="submit"]:hover {
+    background-color: #1eb954;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+#contactForm button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ===================================
+   9. STATISTIQUES & FOOTER
+====================================== */
+.stats {
+    background: #0057B8;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 18px;
+}
+
+footer {
+    background: #003B80;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.footer-content h2 {
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    margin: 10px 0;
+    color: #ddd;
+}
+
+/* ===================================
+   10. BOUTONS FLOTTANTS
+====================================== */
+#topBtn {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #0057B8;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+#topBtn:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background-color: #25D366;
+    color: #FFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1eb954;
+}
+
+.btn-whatsapp-commande {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-whatsapp-commande:hover {
+    background-color: #1eb954;
+    transform: translateY(-3px);
+}
+
+/* ===================================
+   11. MEDIA QUERIES (MOBILE & TABLETTE)
+====================================== */
+@media (max-width: 768px) {
+    /* Navbar & Header */
+    .navbar {
+        height: 70px;
+    }
+
+    .menu-btn {
+        display: block;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .btn-contact {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0057B8;
+        padding: 20px 0;
+        gap: 15px;
+        text-align: center;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px 0;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero */
+    .hero {
+        flex-direction: column-reverse;
+        margin-top: 100px;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    /* Layouts en grilles */
+    .cards, 
+    .services-container, 
+    .produits-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+    }
+
+    .service-box {
+        padding: 25px 20px;
+    }
+
+    /* Conteneurs et formulaires */
+    .contact, 
+    .panier, 
+    .apropos-details {
+        width: 95% !important;
+        padding: 20px 15px !important;
+    }
+
+    .article-panier {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .page-title {
+        margin-top: 90px;
+    }
+
+    /* Statistiques */
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .stat-box h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 25px 20px;
+    }
+    
+    #contactForm button[type="submit"] {
+        font-size: 16px;
+    }
+}
+
+/* Style général du Footer */
+.site-footer {
+  background-color: #0057B8; /* Bleu nuit corporate */
+  color: #FFFFFF;
+  padding: 40px 20px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Alignement principal : Colonnes côte à côte */
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Espace équilibré entre les blocs */
+  align-items: flex-start;        /* Alignés par le haut */
+  flex-wrap: wrap;                 /* Adaptatif sur mobile */
+  gap: 30px;
+}
+
+/* Bloc Logo */
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  max-height: 70px;
+  margin-bottom: 15px;
+  border-radius: 49%;
+}
+
+.brand-desc {
+  color: #D9D9D9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Titre des sections */
+.footer-contact h4 {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Alignement parfait de la liste de contact (Icône + Texte) */
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  display: flex;             /* Alignement sur une ligne */
+  align-items: center;       /* Alignement vertical centré icône/texte */
+  gap: 12px;                 /* Espace fixe entre l'icône et le texte */
+  margin-bottom: 12px;
+  color: #F5F5F5;
+  font-size: 0.95rem;
+}
+
+.footer-contact i {
+  color: #010b3a;            /* Couleur bleu tech pour les icônes */
+  width: 20px;               /* Largeur fixe pour aligner parfaitement tous les textes */
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.footer-contact a {
+  color: #F5F5F5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #010b3a;
+}
+
+/* Ligne inférieure de Copyright */
+.footer-bottom {
+  max-width: 1100px;
+  margin: 30px auto 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #D9D9D9;
+  font-size: 0.85rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background-color: #25D366; /* Couleur verte officielle WhatsApp */
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E; /* Vert plus foncé au survol */
+  transform: translateY(-2px);
+}
+
+/* Adaptabilité pour écrans mobiles */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-contact li {
+    justify-content: center; /* Centre le contenu sur téléphone */
+  }
+}
+
+.fa-circle-plus{
+    font-size: 19px;
+    color: #25D366;
+}
+
+.fa-delete-left{
+    font-size: 19px;         /* Taille de l'icône */
+    color: #f30000;          /* Couleur (rouge) */
+    cursor: pointer;
+}
+.fa-minus{
+    font-size: 19px;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+}
+
+/* Alignement de la section de filtrage et recherche */
+.recherche {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.filter-container {
+    display: flex;
+    gap: 15px;
+}
+
+.filter-container select {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #0057B8;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Version Mobile */
+@media (max-width: 600px) {
+    .filter-container {
+        flex-direction: column;
+    }
+}

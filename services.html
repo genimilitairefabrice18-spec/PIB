@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - PRAT INFOR BURKINA</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+    <nav class="navbar">
+        <!-- Bouton Menu Mobile (À GAUCHE) -->
+        <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+            ☰
+        </button>
+
+        <!-- Logo -->
+        <div class="logo">
+            <h2>PRAT <span>INFOR</span> BURKINA</h2>
+        </div>
+
+        <!-- Menu de Navigation -->
+        <ul class="menu" id="navMenu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="produits.html">Produits</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Bouton Contact (Affiché à droite sur PC) -->
+        <a href="contact.html" class="btn-contact">Nous contacter</a>
+    </nav>
+</header>
+
+    <section class="page-title">
+        <h1>Nos Services</h1>
+        <p>Des solutions informatiques adaptées aux professionnels et particuliers.</p>
+    </section>
+
+    <section class="services">
+        <div class="services-container">
+            <div class="service-box">
+                <div class="icon"><img src="images/MI.jpg" alt="Maintenance informatique"></div>
+                <h3>Maintenance informatique</h3>
+                <p>Réparation, dépannage, nettoyage logiciel et matériel de vos ordinateurs fixes et portables.</p>
+            </div>
+
+            <div class="service-box">
+                <div class="icon"><img src="images/imp.jpg" alt="Installation d'imprimantes"></div>
+                <h3>Installation d'imprimantes</h3>
+                <p>Configuration réseau, installation des pilotes et maintenance préventive de vos équipements d'impression.</p>
+            </div>
+
+            <div class="service-box">
+                <div class="icon"><img src="images/cam.jpg" alt="Caméras de surveillance"></div>
+                <h3>Caméras de surveillance</h3>
+                <p>Étude, installation et paramétrage de systèmes de vidéosurveillance avec accès à distance.</p>
+            </div>
+
+            <div class="service-box">
+                <div class="icon"><img src="images/ri.jpg" alt="Réseaux & Internet"></div>
+                <h3>Réseaux & Internet</h3>
+                <p>Conception, cablage structuré, déploiement WiFi et sécurisation de votre réseau d'entreprise.</p>
+            </div>
+
+            <div class="service-box">
+                <div class="icon"><img src="images/formation.jpg" alt="Formation informatique"></div>
+                <h3>Formation informatique</h3>
+                <p>Des formations pratiques et adaptées à vos besoins professionnels.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- Bloc Logo / Marque -->
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Logo PRAT INFOR" class="footer-logo">
+      <p class="brand-desc">Services et maintenance informatique de haute qualité.</p>
+    </div>
+
+    <!-- Bloc Contacts (Bien alignés avec icônes) -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <ul>
+        <li>
+          <i class="fa-solid fa-globe"></i>
+          <a href="https://prat-infor-burkina.netlify.app/" target="_blank">prat-infor-burkina.netlify.app</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span>+226 76 74 75 11 / 70 08 74 97</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Bobo-Dioulasso, Sikassosira</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Barre du bas (Copyright / Crédits) -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 PRAT INFOR BURKINA. Tous droits réservés.</p>
+  </div>
+</footer>
+
+    <button id="topBtn">↑</button>
+    <!-- Bouton Flottant WhatsApp -->
+    <a href="https://wa.me/22676747511?text=Bonjour%20PRAT%20INFOR%20BURKINA,%20j'aimerais%20avoir%20plus%20d'informations." 
+    class="whatsapp-float" 
+    target="_blank" 
+    aria-label="Contactez-nous sur WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <script src="js/script.js"></script>
+</body>
+</html>
