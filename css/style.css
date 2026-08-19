@@ -435,8 +435,8 @@ header {
 }
 
 .product-card img {
-  max-width: 90%; /* S'adapte à la largeur du conteneur */
-  height: 90%; /* Maintient les proportions sans déformer */
+  max-width: 88%; /* S'adapte à la largeur du conteneur */
+  height: 87%; /* Maintient les proportions sans déformer */
   object-fit: cover; /* Évite d'étirer l'image si elle est dans un conteneur fixe */
 
     /* max-width: 220px;
@@ -453,7 +453,7 @@ header {
 }
 
 /* ===================================
-   8. FORMULAIRE DE CONTACT
+8. FORMULAIRE DE CONTACT
 ====================================== */
 .contact {
     width: 90%;
